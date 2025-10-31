@@ -7,25 +7,32 @@
 
     <!--Used For Center Aligned Text-->
     <style>
-        .center-text{
-            text-align: center;
-        }
         .custom-image{
             width: 150px;
             height: 150px;
         }
+        section {
+            height: 100vh;
+            display: flex;
+        }
     </style>
 </head>
 <body style="background-color: lightblue;" style="font-size:20px">
-    <h1 class="center-text">Starter Pokemon</h1> <!--Title of the website-->
-    <p></p> <!--Puts a gap between the title and paragraph-->
-    <p class="center-text" style="font-size:18px">List of Starter Pokemon From Each Generation</p> <!--Basic Summary of what this website has-->
+        <section>
+            <h1 style="position: absolute; top: 0px; left: 50%; transform:translateX(-50%);">Starter Pokemon</h1> <!--Title of the website-->
+            <p style="position: absolute; top: 50px; left: 50%; transform:translateX(-50%); font-size:18px;">List of Starter Pokemon From Each Generation</p> <!--Basic Summary of what this website has-->
 
-    <h2 style="position: absolute; top: 120px; left: 50%; transform:translateX(-50%);">Generation 1 - Kanto</h2> <!--title of gen 1 pokemon-->
-    
-    <!--Image of the gen 1 starter pokemon-->
-    <img src="Bulbasaur.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 17%; transform:translateX(-50%);">
-    <img src="Charmander.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 50%; transform:translateX(-50%);">
-    <img src="Squirtle.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 83%; transform:translateX(-50%);">
-</body>
+            <h2 style="position: absolute; top: 120px; left: 50%; transform:translateX(-50%);">Generation 1 - Kanto</h2> <!--title of gen 1 pokemon-->
+            
+            <!--Image of the gen 1 starter pokemon-->
+            <img src="Bulbasaur.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 17%; transform:translateX(-50%);">
+            <img src="Charmander.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 50%; transform:translateX(-50%);">
+            <img src="Squirtle.jpg" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 83%; transform:translateX(-50%);">
+
+            <!--Title of each gen 1 pokemon-->
+            <p style="font-size:18px; position: absolute; top: 320px; left: 17%; transform:translateX(-50%);">Bulbasaur</p>
+            <p style="font-size:18px; position: absolute; top: 320px; left: 50%; transform:translateX(-50%);">Charmander</p>
+            <p style="font-size:18px; position: absolute; top: 320px; left: 83%; transform:translateX(-50%);">Squirtle</p>
+        </section>
+    </body>
 </html>
