@@ -4,42 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Website</title> <!--title for the website tab-->
-
-    <!--Used For Center Aligned Text-->
     <style>
-        .custom-image{
-            width: 150px;
-            height: 150px;
-        }
         section {
             height: 100vh;
             display: flex;
         }
-
-        .square{
-            width: 150px;
-            height: 150px;
-            background-color: white;
-        }
     </style>
 </head>
-<body style="background-color: lightblue;" style="font-size:20px">
-        <section>
-            <h1 style="position: absolute; top: 0px; left: 50%; transform:translateX(-50%);">Starter Pokemon</h1> <!--Title of the website-->
-            <p style="position: absolute; top: 50px; left: 50%; transform:translateX(-50%); font-size:18px;">List of Starter Pokemon From Each Generation</p> <!--Basic Summary of what this website has-->
+<body style="background-color: lightblue;" style="font-size:20px" onload="images(gen1_url, gen1_names, 175)">
+    <script>
+        function images(image_url, pokemon_name, top){
+            for (let i = 0; i < image_url.length; i++) {
 
-            <h2 style="position: absolute; top: 120px; left: 50%; transform:translateX(-50%);">Generation 1 - Kanto</h2> <!--title of gen 1 pokemon-->
-            
-            <!--Image of the gen 1 starter pokemon-->
-            <img src="https://www.nicepng.com/png/detail/99-991854_bulbasaur-transparent-image-bulbasaur-transparent.png" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 17%; transform:translateX(-50%);">
-            <div class="square" style="position: absolute; top: 177px; left: 50%; transform:translateX(-50%);"></div> <!--white background for charmander image-->
-            <img src="https://www.nicepng.com/png/full/278-2789894_pokemon-charmander-vector.png" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 50%; transform:translateX(-50%);">
-            <img src="https://www.pngkey.com/png/detail/898-8987149_007-squirtle-by-rayo123000-pokemon-squirtle-png.png" class="custom-image" style="border: 3px solid black; position: absolute; top: 175px; left: 83%; transform:translateX(-50%);">
+                const container = document.createElement("div");
+                container.style.position = "absolute";
+                container.style.width = "150px";
+                container.style.height = "150px";
+                container.style.backgroundColor = "white";
+                container.style.top = top + "px";
 
-            <!--Title of each gen 1 pokemon-->
-            <p style="font-size:18px; position: absolute; top: 320px; left: 17%; transform:translateX(-50%);">Bulbasaur</p>
-            <p style="font-size:18px; position: absolute; top: 320px; left: 50%; transform:translateX(-50%);">Charmander</p>
-            <p style="font-size:18px; position: absolute; top: 320px; left: 83%; transform:translateX(-50%);">Squirtle</p>
-        </section>
-    </body>
+                // Set horizontal positions
+                if (i === 0) container.style.left = "17%";
+                else if (i === 1) container.style.left = "50%";
+                else if (i === 2) container.style.left = "83%";
+
+                container.style.transform = "translateX(-50%)";
+                
+                const img = document.createElement("img");
+                img.src = image_url[i];
+                img.style.width = "150px";
+                img.style.height = "150px";
+                img.style.position = "absolute";
+                img.style.top = "-2px";
+                img.style.border = "3px solid black";
+                img.style.left = "50%";
+
+                // Center the image horizontally
+                img.style.transform = "translateX(-50%)";
+
+                container.appendChild(img);
+                document.body.appendChild(container);
+
+                const top_text = top + 160;
+
+                const textDiv = document.createElement("div");
+                textDiv.innerText = pokemon_name[i];
+                textDiv.style.position = "absolute";
+                textDiv.style.top = top_text + "px";
+                textDiv.style.transform = "translateX(-50%)";
+                
+                // Set different left positions
+                if (i === 0) textDiv.style.left = "17%";
+                else if (i === 1) textDiv.style.left = "50%";
+                else if (i === 2) textDiv.style.left = "83%";
+
+                document.body.appendChild(textDiv);
+            }
+        }
+        
+        const gen1_url = ["https://www.nicepng.com/png/detail/99-991854_bulbasaur-transparent-image-bulbasaur-transparent.png", "https://www.nicepng.com/png/full/278-2789894_pokemon-charmander-vector.png", "https://www.pngkey.com/png/detail/898-8987149_007-squirtle-by-rayo123000-pokemon-squirtle-png.png"];
+        const gen1_names = ["Bulbasaur", "Chamander", "Squirtle"];
+        
+    </script>
+    <section>
+        <h1 style="position: absolute; top: 0px; left: 50%; transform:translateX(-50%);">Starter Pokemon</h1> <!--Title of the website-->
+        <p style="position: absolute; top: 50px; left: 50%; transform:translateX(-50%); font-size:18px;">List of Starter Pokemon From Each Generation</p> <!--Basic Summary of what this website has-->
+
+        <h2 style="position: absolute; top: 120px; left: 50%; transform:translateX(-50%);">Generation 1 - Kanto</h2> <!--title of gen 1 pokemon-->
+    </section>
+</body>
 </html>
